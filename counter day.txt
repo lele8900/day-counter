@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Giorni</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: rgba(0, 0, 0, 0); /* Sfondo trasparente */
+            color: #ffffff; /* Colore del testo */
+            font-size: 50px;
+        }
+        #timer {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="timer">
+        Giorno: <span id="dayCounter">0</span>
+    </div>
+
+    <script>
+        // Imposta la durata di un "giorno" in secondi (20 minuti = 1200 secondi)
+        const dayDuration = 1200;
+        let currentDay = 0;
+
+        function updateDayCounter() {
+            // Aumenta il giorno
+            currentDay++;
+            document.getElementById("dayCounter").innerText = currentDay;
+        }
+
+        // Aggiorna il giorno ogni 20 minuti
+        setInterval(updateDayCounter, dayDuration * 1000);
+
+        // Inizializza il conteggio
+        updateDayCounter();
+    </script>
+</body>
+</html>
